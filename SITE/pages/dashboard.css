@@ -1,0 +1,177 @@
+body {
+    height: 115%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Joost,sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #772828;
+    height: 88px;
+    width: 100%;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 15px;
+}
+
+.logo img {
+    padding-top: 120px;
+    padding-left: 30px;
+    width: 175px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    padding-right: 20px;
+    font-family: Joost, sans-serif;
+}
+
+nav li {
+    margin-right: 20px;
+    color: white; /* Ajout d'une couleur pour les éléments de la liste */
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.15s ease-in-out;
+}
+
+a:hover{
+    color: #772828;
+}
+
+
+ 
+.avenir {
+    padding-top: 105px;
+    width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: column; /* Aligne les éléments verticalement */
+    align-items: center; /* Centre les éléments horizontalement */
+    gap: 20px; /* Espace entre les éléments */
+}
+
+.avenir_selection {
+    padding-top: 30px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column; /* Aligne les éléments verticalement */
+    align-items: center; /* Centre les éléments horizontalement */
+    gap: 20px; /* Espace entre les éléments */
+    padding-bottom: 50px;
+}
+
+.event {
+    background-color: #d9d9d9;
+    padding: 20px;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.imgpres img{
+    width: 200px;
+    height: auto;
+    margin-left:30px;
+}
+
+.pres  {
+    display: flex;
+    flex-direction: row;
+}
+
+.role{
+    margin-left:30px;
+}
+
+.role ul{
+    list-style: none;
+    margin-bottom: 10px;
+    margin-left: 30px ;
+}
+
+#line {
+    height: 1px;
+    background-color: black;
+    margin: 10px 0;
+}
+
+
+
+.boutons{
+    margin-top:20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.boutons button{
+    width: 47%;
+    height: 52px;
+    border-radius:15px;
+    border:none;
+    background-color:#772828;
+    color:white;
+    font-size:30px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.boutons button:hover{
+    transform: scale(1.05);
+
+}
+
+.rdv {
+    display: flex;
+    flex-direction: row;
+    margin-left: 30px;
+    margin-top: 30px;
+    justify-content: space-between;
+}
+
+.rdv button{
+    margin-left:495px;
+    border:none;
+    background-color:#d9d9d9;
+    transition: transform 0.2s ease-in-out;
+}
+
+.rdv button:hover{
+    transform: scale(1.1);
+}
+
+.test{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.avenir_selection .boutons button{
+    font-size:20px;
+}
+

@@ -1,0 +1,141 @@
+body {
+    height: 115%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Joost,sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #772828;
+    height: 88px;
+    width: 100%;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 15px;
+}
+
+.logo img {
+    padding-top: 120px;
+    padding-left: 30px;
+    width: 175px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    padding-right: 20px;
+    font-family: Joost, sans-serif;
+}
+
+nav li {
+    margin-right: 20px;
+    color: white; /* Ajout d'une couleur pour les éléments de la liste */
+}
+
+/*Body*/
+
+
+.pres{
+    margin-top:105px;
+    background-color:#d9d9d9;
+    width: 1000px;
+    margin-left: 256px;
+    margin-right: 256px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+.spectacle{
+    display: flex;
+    flex-direction: row;
+    margin:25px;
+}
+
+.spectacle img{
+    border-radius:15px;
+}
+
+.spectacle .text{
+    margin-left:25px;
+}
+
+.spectacle .text p{
+    margin-top: 10px;
+}
+
+#line{
+    height: 1px;
+    background-color: black;
+    margin: 10px 20px;
+}
+
+.repr{
+    margin-top:25px;
+    margin-left: 25px;
+    margin-bottom: 25px;
+}
+
+.repr ul{
+    list-style: none;
+}
+
+.repr ul li{
+    display: flex;
+    flex-direction: row;
+    height :60px;
+    justify-content: space-between;
+    margin-right: 25px;
+    background-color: #c7c7c7;
+    border-radius: 15px;
+    margin-top: 8px;
+    align-items: center;
+    padding-left: 25px;
+    padding-right: 10px;
+}
+
+.repr ul li .date{
+    font-size: 25px;
+}
+
+
+.repr ul li button{
+    width: 30%;
+    height: 45px;
+    border-radius:15px;
+    border:none;
+    background-color:#772828;
+    color:white;
+    font-size:30px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.repr ul li button:hover{
+    transform: scale(1.05);
+
+}
+

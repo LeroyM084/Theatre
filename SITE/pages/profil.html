@@ -3,79 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil d'Alexandre Martial</title>
+    <title>Profil</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
             margin: 0;
             padding: 0;
+            background-image: url('background.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+        }
+        .top-banner {
+            background-color: rgba(128, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 20px 20px;
+            position: relative;
+        }
+        .top-banner .logo-left {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+        .top-banner .logo-left img {
+            width: 100px;
+            height: 100px;
+        }
+        .top-banner .logos {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .top-banner .logos img {
+            width: 60px;
+            height: 60px;
+            margin-left: 30px;
         }
         .profile-container {
-            max-width: 400px;
-            margin: 0 auto;
-            background-color: #6b1b1b;
-            color: #ffffff;
-            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.9); 
             border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
         .profile-name {
             font-size: 24px;
             font-weight: bold;
-            margin-bottom: 10px;
+            text-align: center;
         }
-        .personal-info {
-            margin-bottom: 20px;
+        .section {
+            margin-top: 20px;
         }
-        .personal-info p {
-            margin: 0;
-        }
-        .statistics {
-            margin-bottom: 20px;
-        }
-        .statistics h3 {
+        .section h3 {
             font-size: 18px;
             font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .statistics ul {
-            list-style: none;
-            padding: 0;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #e9e9e9;
             margin: 0;
+            border-radius: 5px;
         }
-        .statistics li {
-            margin-bottom: 5px;
+        .section-content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #e9e9e9;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
         }
-        .pie-chart {
-            width: 100%;
-            height: 200px;
-            background-color: #ffffff;
-            border-radius: 10px;
+        .stats p {
+            margin: 5px 0;
         }
-        /* Add your own styles for the pie chart here */
+        .pie-chart-container {
+            text-align: center;
+            margin-top: 20px;
+        }
     </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div class="profile-container">
-        <div class="profile-name">Alexandre Martial</div>
-        <div class="personal-info">
-            <p>Date de naissance : 25/05/2002</p>
-            <p>Email : alexandre.martial@gmail.com</p>
-            <p>Téléphone portable : 06 01 02 03 04</p>
+    <div class="top-banner">
+        <div class="logo-left">
+            <img src="logo.jpg" alt="Logo Left">
         </div>
-        <div class="statistics">
-            <h3>Statistiques</h3>
-            <ul>
-                <li>Nombre de spectacles joués : 12</li>
-                <li>Nombre de candidatures : 14</li>
-                <li>Nombre de premiers rôles : 5</li>
-                <li>Nombre d'ateliers : 43</li>
-                <li>Nombre d'événements au total : 55</li>
-            </ul>
-        </div>
-        <div class="pie-chart">
-            <!-- Add your pie chart here -->
+        <h1>Votre Profil</h1>
+        <div class="logos">
+            <img src="profil.png" alt="Logo Profil">
+            <img src="message.png" alt="Logo Message">
         </div>
     </div>
+    <div class="profile-container">
+        <img src="dalton.jpg" alt="Avatar d'Alexandre Martial" class="avatar">
+        <div class="profile-name">Alexandre Martial</div>
+        <div class="section">
+            <h3>Informations Personnelles</h3>
+            <div class="section-content">
+                <p>Date de naissance: 25/05/2002</p>
+                <p>Email: alexandre.martial@gmail.com</p>
+                <p>Téléphone portable: 06 01 02 03 04</p>
+            </div>
+        </div>
+        <div class="section">
+            <h3>Statistiques</h3>
+            <div class="section-content stats">
+                <p>Nombre de spectacles joués: 12</p>
+                <p>Nombre de candidatures: 14</p>
+                <p>Nombre de premiers rôles: 5</p>
+                <p>Nombre d'ateliers: 43</p>
+                <p>Nombre d'événements au total: 55</p>
+            </div>
+        </div>
+        <div class="pie-chart-container">
+            <canvas id="pieChart" width="400" height="400"></canvas>
+        </div>
+    </div>
+
+    <script>
+
+        document.querySelectorAll('.section h3').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                content.style.display = content.style.display === 'none' ? 'block' : 'none';
+            });
+        });
+
+
+        const ctx = document.getElementById('pieChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Ateliers', 'Refus', 'Premiers rôles', 'Spectacles'],
+                datasets: [{
+                    label: 'Statistiques',
+                    data: [43, 9, 5, 12],
+                    backgroundColor: ['#ffa500', '#ff6347', '#6495ed', '#32cd32'],
+                    borderColor: '#ffffff',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'bottom',
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>

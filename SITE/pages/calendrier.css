@@ -1,0 +1,119 @@
+    body {
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .calendar {
+        width: 100%;
+        height: calc(100% - 20px); /* Adjusted height to account for bottom margin */
+        max-width: 100%;
+        max-height: calc(100% - 20px); /* Adjusted max-height to account for bottom margin */
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px; /* Adding space below the calendar */
+    }
+
+    .month {
+        background-color: #660000;
+        color: white;
+        text-align: center;
+        padding: 1px 0;
+        font-size: 2em;
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+    }
+
+    .weekdays {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #333;
+        color: white;
+        flex: 0 0 auto;
+    }
+
+    .weekdays div {
+        width: calc(100% / 7);
+        padding: 10px; /* Reduce padding for less thickness */
+        box-sizing: border-box;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .days {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #fafafa;
+        flex: 1 1 auto;
+    }
+
+    .days div {
+        border: 1px solid #ddd;
+        position: relative;
+        transition: background-color 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1 1 calc(100% / 7);
+    }
+
+    .empty {
+        background-color: #eee;
+        border: none;
+    }
+
+    .event {
+        background-color: #ffcccc;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .event:hover {
+        background-color: #ff9999;
+        cursor: pointer;
+    }
+
+    .days div time {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+
+    .logo-left img {
+        width: 100px; /* Ajustez la taille de votre logo selon vos besoins */
+        margin-left: 10px;
+    }
+
+    .images-right img {
+        width: 60px; /* Ajustez la taille de vos images selon vos besoins */
+        margin-left: 25px; /* Espace entre les images */
+    }
+
+    .header {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #660000; /* Couleur de fond de la bande */
+        color: white;
+        padding: 20px;
+    }
+    
+    .month h2 {
+        margin: 0;
+        flex-grow: 1; /* Permet au mois de prendre tout l'espace disponible */
+    }
+    
+
+    
